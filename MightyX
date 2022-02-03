@@ -1,0 +1,47 @@
+#!/bin/bash
+
+
+_get_repolink () {
+    local regex
+    regex='(https?)://github.com/.+/.+'
+    if [[ $MIG_REPO == "mightyxspam" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0JlaW5nTWlnaHR5L01pZ2h0eVhTcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+    elif [[ $MIG_REPO == "MIGOELXSPAM" ]]
+    then
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0JlaW5nTWlnaHR5L01pZ2h0eVhTcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+    elif [[ $MIG_REPO =~ $regex ]]
+    then
+        if [[ $MIG_REPO_BRANCH ]]
+        then
+            echo "${MIG_REPO}/archive/${MIG_REPO_BRANCH}.zip"
+        else
+            echo "${MIG_REPO}/archive/main.zip"
+        fi
+    else
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0JlaW5nTWlnaHR5L01pZ2h0eVhTcGFtL2FyY2hpdmUvbWFpbi56aXA=" | base64 -d
+    fi
+}
+
+
+_set_bot () {
+    local zippath
+    zippath="mightyxspam.zip"
+    echo "  Downloading Source Code..."
+    wget -q $(_get_repolink) -O "$zippath"
+    echo "  Unpacking Data ..."
+    MIGPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
+    unzip -qq "$zippath"
+    echo "Done"
+    echo "  Cleaning..."
+    rm -rf "$zippath"
+    sleep 5
+    cd $MIGPATH
+    echo "  Starting.... MightyXSpam "
+    echo "𝙈𝙞𝙜𝙝𝙩𝙮 𝙓 𝙎𝙥𝙖𝙢"
+
+    python3 ../setup/updater.py ../requirements.txt requirements.txt
+    python3 -m MightyXSpam
+}
+
+_set_bot
