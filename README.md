@@ -4,7 +4,7 @@
 </h1>
 
  
-- [x] ☯︎ ғᴀsᴛ ᴀɴᴅ sᴛᴀʙʟᴇ ☯︎
+- [x] ✨ ғᴀsᴛ ᴀɴᴅ sᴛᴀʙʟᴇ ✨
 - [x] Deploy upto 40 UserBots in One Time🔥
 
 # Deploy To Heroku
@@ -18,7 +18,7 @@
 
 <details>
  
-  <summary> • 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 • </summary>
+  <summary> 𝗖𝗿𝗲𝗱𝗶𝘁𝘀 </summary>
 
 * [RiZoeL Creator](https://github.com/MrRizoel)
 * [Lonami](https://github.com/LonamiWebs/) for [Telethon.](https://github.com/LonamiWebs/Telethon)
