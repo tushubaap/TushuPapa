@@ -1,7 +1,7 @@
 FROM sandy1709/catuserbot:alpine
 
 #clonning repo 
-RUN git clone https://github.com/BeingMighty/MightyXSpam.git /root/MightyXSpam
+RUN git clone https://github.com/BeingMighty/MightyXIDSpam.git /root/MightyXSpam
 #working directory 
 WORKDIR /root/MightyXSpam
 
