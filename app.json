@@ -19,7 +19,12 @@
         "required": true
       },
       "ALIVE_PIC": {
-        "description": "Your Alive Pic or Video's Telegraph Link.",
+        "description": "Your Alive Pic or Video's Telegraph Link.  (Optional)",
+        "value": "",
+        "required": false
+      },
+      "ALIVE_TEXT": {
+        "description": "Fill Alive Text.  (Optional)",
         "value": "",
         "required": false
       },
