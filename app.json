@@ -249,7 +249,7 @@
             "required": false
         },
       "OWNER_ID": {
-            "description": "Sudo users id saparated by space.",
+            "description": "Fill Owner's UserID.",
             "value": "",
             "required": true
         },
